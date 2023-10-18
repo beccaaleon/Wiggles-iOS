@@ -33,7 +33,9 @@ struct HomeView: View {
                             NavigationLink(destination: DetailsView(model: model), label: {
                                 HomeListModelView(image: model.image, name: model.name, age: model.age,
                                                   about: model.about, location: model.location, gender: model.gender).padding(.bottom, 4)
+                                   
                             })
+                            .accessibilityIdentifier(model.name + "identifier")
                         }
                     }
                     Spacer()
@@ -95,3 +97,4 @@ struct HomeView_Previews: PreviewProvider {
         HomeView()
     }
 }
+
